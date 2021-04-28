@@ -137,6 +137,13 @@ section {
 	height: 100vh;
 	align-items: center;
 	padding: 100px;
+	flex-direction: column;
+	margin-top: 60px;
+}
+
+.home {
+	flex-direction: row;
+	margin-top: 0;
 }
 
 .home_content {
@@ -170,6 +177,77 @@ p {
 	transform: scale(0.98);
 }
 
+.services {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 40px;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.services .service {
+	padding: 30px;
+}
+
+.services .service:hover {
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.services .service h2 {
+	font-size: 24px;
+	font-weight: 500;
+	margin-top: 20px;
+	color: #1b206e;
+}
+
+.services .service .icon img {
+	max-width: 100px;
+}
+
+.portfolio {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 20px;
+	justify-content: center;
+}
+
+.portfolio .item {
+	position: relative;
+	width: 300px;
+	height: 300px;
+	margin: 5px;
+}
+
+.portfolio .item img {
+	width: 100%;
+	height: 100%;
+}
+
+.portfolio .item .action {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.portfolio .item:hover .action {
+	opacity: 1;
+}
+
+.portfolio .item .action a {
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+	border: 1px solid #fff;
+	padding: 5px 15px;
+}
 @media (max-width: 1068px) {
 	.home_img {
 		display: none;
@@ -184,5 +262,17 @@ p {
 	}
 	.navigation ul li a{
 		font-size: 2rem;
+	}
+	.services {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 768px) {
+	.services {
+		grid-template-columns: 1fr;
+	}
+	.services .service {
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 	}
 }
